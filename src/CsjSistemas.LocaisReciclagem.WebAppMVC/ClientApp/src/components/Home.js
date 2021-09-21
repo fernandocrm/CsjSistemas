@@ -124,6 +124,11 @@ export class Home extends Component {
     render() {
         return (
             <div className="row">
+                <div className="col-lg-12">
+                <p>Para testar, por gentileza rodar a api primeiramente e depois rodar a aplicação web.
+                Api: CsjSistemas.LocaisReciclagem.API</p>
+                </div>
+
                 <div className="col-lg-8">
                     <div className="row btn-adicionar">
                         <div className="col-md-2">
