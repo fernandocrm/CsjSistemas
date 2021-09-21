@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<meta charset="iso-8859-1" />-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <base href="%PUBLIC_URL%/" />
+
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <script type="text/javascript" src="jquery.js"></script>
+
+    <script type="text/javascript">
+        function UpdateLocalizacao(lat, lng, address, id) {
+            //alert("Latitude: " + lat + "\nLongitude: " + lng + "\nAddress: " + address + "markerID: " + id);
+            var obj = { Latitude: "" + lat + "", Longitude: "" + lng + "", Logradouro: "" + address + "", LocalReciclagem_Id: "" + id + "" };
+            var obj2 = "Latitude=" + lat + "&Longitude=" + lng +"&Logradouro=" + address + "&LocalReciclagem_Id=" + id + ""; 
+            $.ajax({
+                type: 'post',
+                url: "https://localhost:5701/api/atualizar",
+               // dataType: "json",
+                //contentType: 'application/json',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                data: obj2,
+                success: function (data) {
+                    
+                }
+            });
+        }
+
+        var markers = [];
+        $.ajax({
+            type: "GET",
+            url: "https://localhost:44364/listar-todos",
+            dataType: "json",
+            success: function (data) {
+                markers = data
+            }
+        });
+
+        window.onload = function () {
+
+            var mapOptions = {
+                center: new google.maps.LatLng(markers[0].lat, markers[0].lng),
+                zoom: 8,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var infoWindow = new google.maps.InfoWindow();
+            var latlngbounds = new google.maps.LatLngBounds();
+            var geocoder = geocoder = new google.maps.Geocoder();
+            var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+            for (var i = 0; i < markers.length; i++) {
+                var data = markers[i]
+                var myLatlng = new google.maps.LatLng(data.lat, data.lng);
+                var marker = new google.maps.Marker({
+                    position: myLatlng,
+                    map: map,
+                    icon:"icon_cjs.png",
+                    title: data.title,
+                    draggable: true,
+                    animation: google.maps.Animation.DROP
+                });
+
+
+                (function (marker, data) {
+                    google.maps.event.addListener(marker, "click", function (e) {
+                        infoWindow.setContent(data.description);
+                        infoWindow.open(map, marker);
+                    });
+                    google.maps.event.addListener(marker, "dragend", function (e) {
+                        var lat, lng, address;
+                        geocoder.geocode({ 'latLng': marker.getPosition() }, function (results, status) {
+                            if (status == google.maps.GeocoderStatus.OK) {
+                                lat = marker.getPosition().lat();
+                                lng = marker.getPosition().lng();
+                                address = results[0].formatted_address;
+                                //TODO: Chamar a function para editar.
+                                UpdateLocalizacao(lat, lng, address, data.id);
+                            }
+                        });
+                    });
+                })(marker, data);
+                latlngbounds.extend(marker.position);
+            }
+            var bounds = new google.maps.LatLngBounds();
+            map.setCenter(latlngbounds.getCenter());
+            map.fitBounds(latlngbounds);
+        }
+    </script>
+
+
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <script src="./index.js"></script>
+    <title>Teste CSJ Sistemas</title>
+</head>
+<body>
+    <noscript>
+        You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <div id="map" style="height:500px; width:530px;margin-left:117px"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdpLeT8vABlDU0uDGLiENi3R5yhLSJNOs&map_ids=4acf7f900192d33c&callback=initMap" async></script>
+</body>
+
+</html>

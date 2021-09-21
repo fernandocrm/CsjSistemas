@@ -1,0 +1,12 @@
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\bin\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.deps.json
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\bin\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.dll
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\bin\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.pdb
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\bin\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Core.dll
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\bin\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Core.pdb
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\obj\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.csprojAssemblyReference.cache
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\obj\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.AssemblyInfoInputs.cache
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\obj\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.AssemblyInfo.cs
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\obj\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.csproj.CoreCompileInputs.cache
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\obj\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.csproj.CopyComplete
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\obj\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.dll
+C:\Projetos\CsjSistemas\LocaisReciclagem\src\CsjSistemas.LocaisReciclagem.Domain\obj\Debug\netcoreapp3.1\CsjSistemas.LocaisReciclagem.Domain.pdb

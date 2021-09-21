@@ -1,0 +1,58 @@
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+}
+
+code {
+    color: #E01A76;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.form-locais {
+    display:none;
+}
+
+.btn-adicionar {
+    margin: 0px 0px 10px -15px;
+}
+
+#elemento-direita{
+  /*  position:absolute;
+    top:114px;
+    right:180px;*/
+}
+
+table th {
+    background: #ccc;
+    text-align:center;
+    height:50px;
+}
+table tr {
+    border:solid 1px #ccc;
+}
+    table tr td {
+        border: solid 1px #ccc;
+        text-align: center;
+    }
+    table{
+    position:absolute;
+    width:540px;
+    right:100px;
+}
+
+nav {
+    background: #869daf;
+   
+}
+    nav a {
+        color: #fff !important;
+    }
+
+.btn-submit{
+    margin-left:30px;
+}
